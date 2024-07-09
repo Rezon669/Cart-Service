@@ -1,4 +1,4 @@
-package com.ecom.cartservice.dao;
+package com.ecom.cartservice.repository;
 
 
 
@@ -15,7 +15,7 @@ import com.ecom.cartservice.model.Cart;
 public interface CartRepository extends JpaRepository<Cart, Long> {
 
 	@Query("SELECT productid FROM Cart c WHERE c.userid=:userid")
-	 Optional<Integer> findProducts(long userid);
+	 Optional<Integer> findProducts(Long userid);
 	// Additional custom queries can be added here if needed
 
 	@Query("SELECT c.productid FROM Cart c WHERE c.userid = :userid")

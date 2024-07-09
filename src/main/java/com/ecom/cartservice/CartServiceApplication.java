@@ -1,15 +1,17 @@
-package com.ecom.Cart_Service;
+package com.ecom.cartservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableFeignClients
+@EnableFeignClients(basePackages = "com.ecom.cartservice.feignclient")
 @ComponentScan(basePackages = {"com.ecom.cartservice"})
+@EnableJpaRepositories(basePackages = "com.ecom.cartservice.repository")
 public class CartServiceApplication {
 
 	public static void main(String[] args) {

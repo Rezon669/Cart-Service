@@ -9,20 +9,20 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ecom.cartservice.dao.CartRepository;
 import com.ecom.cartservice.exception.CustomException;
+import com.ecom.cartservice.feignclient.ProductServiceFeignClient;
 import com.ecom.cartservice.model.Cart;
 import com.ecom.cartservice.model.Product;
-import com.ecomcartservice.feignclient.ProductServiceFeignClient;
+import com.ecom.cartservice.repository.CartRepository;
 
 @Service
 public class CartService {
     private static final Logger logger = LogManager.getLogger(CartService.class);
 
-   // @Autowired
+    @Autowired
     private ProductServiceFeignClient productFeignClient;
 
-  //  @Autowired
+    @Autowired
     private CartRepository cartRepository;
 
     public String addToCart(Long productId, Long userId) throws CustomException {

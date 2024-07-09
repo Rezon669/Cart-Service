@@ -11,7 +11,7 @@ import jakarta.persistence.Id;
 public class Cart {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long cartid;
+	private Long cartid;
 	
 	
 
